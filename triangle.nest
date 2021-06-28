@@ -5,7 +5,7 @@
 ;-      For: https://github.com/Siskin-framework/triangle                       
 ;-------------------------------------------------------------------------------
 
-compiler: clang
+compiler: gcc
 source:  %src/
 strip:    on
 
@@ -26,6 +26,10 @@ defines: [
 #if Windows? [
 	defines: _CRT_SECURE_NO_WARNINGS
 	upx: on
+]
+
+#if macOS? [
+	compiler: clang
 ]
 
 arch-x64: [
