@@ -2,9 +2,9 @@ name: 'Triangle CI'
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -22,26 +22,26 @@ jobs:
     - name: Install Siskin Builder
       uses: oldes/install-siskin@v0.3.5
 
-#    - name: Build 32bit Traingle utility
-#      run: ./siskin triangle.nest %triangle-x86
+    - name: Build 32bit Traingle utility
+      run: ./siskin triangle.nest %triangle-x86
 
     - name: Build 64bit Traingle utility
       run: ./siskin triangle.nest %triangle-x64
 
-#    - name: Build 32bit Tricall test app
-#      run: ./siskin triangle.nest %tricall-x86
+    - name: Build 32bit Tricall test app
+      run: ./siskin triangle.nest %tricall-x86
       
     - name: Build 64bit Tricall test app
       run: ./siskin triangle.nest %tricall-x64
 
-#    - name: Test 32bit Triangle
-#      run:  ./build/triangle-x86
+    - name: Test 32bit Triangle
+      run:  ./build/triangle-x86
 
     - name: Test 64bit Triangle
       run:  ./build/triangle-x64
 
-#    - name: Test 32bit Tricall
-#      run:  ./build/tricall-x86
+    - name: Test 32bit Tricall
+      run:  ./build/tricall-x86
 
     - name: Test 64bit Tricall
       run:  ./build/tricall-x64
