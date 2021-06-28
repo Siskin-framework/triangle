@@ -47,7 +47,7 @@ jobs:
         name: Triangle-windows-CI-${{github.run_id}}
         path: ./build/*
 
-   linux:
+  linux:
     strategy:
       fail-fast: true
     runs-on: ubuntu-latest
@@ -75,7 +75,7 @@ jobs:
         name: Triangle-linux-CI-${{github.run_id}}
         path: ./build/*
 
-   macos:
+  macos:
     strategy:
       fail-fast: true
     runs-on: macos-latest
