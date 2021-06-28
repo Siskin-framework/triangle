@@ -216,9 +216,6 @@
 #define REAL double
 #endif /* not SINGLE */
 
-#ifdef LINUX
-#include <math.h>
-#endif
 
 /* If yours is not a Unix system, define the NO_TIMER compiler switch to     */
 /*   remove the Unix-specific timing code.                                   */
