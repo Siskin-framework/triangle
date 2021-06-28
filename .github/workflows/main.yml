@@ -1,6 +1,6 @@
 name: 'Triangle CI'
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
+  # Triggers the workflow on push or pull request events but only for the main branch
   push:
     branches: [ main ]
   pull_request:
@@ -21,6 +21,9 @@ jobs:
 
     - name: Install Siskin Builder
       uses: oldes/install-siskin@v0.3.5
+
+    - name: Install Clang
+      run:  choco install llvm
 
     - name: Build 32bit Traingle utility
       run: ./siskin triangle.nest %triangle-x86
