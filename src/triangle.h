@@ -248,7 +248,7 @@
 /*                                                                           */
 /*****************************************************************************/
 
-struct triangulateio {
+typedef struct triangulateio {
   REAL *pointlist;                                               /* In / out */
   REAL *pointattributelist;                                      /* In / out */
   int *pointmarkerlist;                                          /* In / out */
@@ -277,7 +277,7 @@ struct triangulateio {
   int *edgemarkerlist;            /* Not used with Voronoi diagram; out only */
   REAL *normlist;                /* Used only with Voronoi diagram; out only */
   int numberofedges;                                             /* Out only */
-};
+} triangulateio;
 
 #ifdef ANSI_DECLARATORS
 void triangulate(char *, struct triangulateio *, struct triangulateio *,
