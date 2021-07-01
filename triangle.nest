@@ -6,10 +6,10 @@
 ;-------------------------------------------------------------------------------
 
 compiler: gcc
-source:  %src/
 strip:    on
 
-file: %triangle.c
+include: %src/
+file: %src/triangle.c
 
 defines: [
 	NO_TIMER
@@ -65,13 +65,13 @@ eggs: only [
 	]
 	"Test app: tricall 32bit" [
 		name: %tricall-x86
-		file: %tricall.c
+		file: %src/tricall.c
 		defines: TRILIBRARY
 		:arch-x86
 	]
 	"Test app: tricall 64bit" [
 		name: %tricall-x64
-		file: %tricall.c
+		file: %src/tricall.c
 		defines: TRILIBRARY
 		:arch-x64
 	]
